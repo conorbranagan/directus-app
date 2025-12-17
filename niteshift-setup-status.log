@@ -1,0 +1,26 @@
+================================================================================
+NITESHIFT SETUP STATUS LOG - Directus Admin App
+================================================================================
+
+--- Attempt 1 ---
+Timestamp: 2025-12-17T03:10:00Z
+Changes: Initial setup script creation
+Commands: npm install, npm run dev
+Status: FAILED - OpenSSL error: "error:0308010C:digital envelope routines::unsupported"
+Reason: Node.js 22 requires --openssl-legacy-provider for older webpack versions
+
+--- Attempt 2 ---
+Timestamp: 2025-12-17T03:13:00Z
+Changes: Added NODE_OPTIONS="--openssl-legacy-provider" to setup script
+Commands: npm run dev (with openssl legacy provider)
+Status: SUCCESS - Port 8080 responding with HTTP 200
+Result: Vue CLI dev server running successfully, serving Directus Admin App
+
+================================================================================
+FINAL STATUS: COMPLETED
+================================================================================
+- Primary port 8080 returns 2xx
+- Dev server: Vue CLI 3 serving Vue.js 2 SPA
+- Config: Demo API endpoints preconfigured in public/config.js
+- Key fix: NODE_OPTIONS="--openssl-legacy-provider" for Node 22 compatibility
+
